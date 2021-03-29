@@ -20,7 +20,6 @@ const Playerpage = () =>{
     const [players, setPlayers] = React.useState([]);
     
     useEffect(async()=>{
-      console.log("ABC")
       if(!players.length){
         const {playerList} = await fetchDataFromAPI();
         await setPlayers(playerList)

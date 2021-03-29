@@ -9,16 +9,6 @@
     position: relative;
   }
 
-  .modal-close{
-    border: solid 0px;
-    position: absolute;
-    top: 20px;
-    right: 0;
-    background: #fff;
-    padding: 5px;
-    color: #ccc;
-    cursor: pointer;
-  }
 
   .image{
     width: 50%;
