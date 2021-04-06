@@ -19,12 +19,12 @@ const customStyles = {
 const Playerpage = () =>{
     const [players, setPlayers] = React.useState([]);
     
-    useEffect(async()=>{
-      if(!players.length){
-        const {playerList} = await fetchDataFromAPI();
-        await setPlayers(playerList)
-      }
-    },[players])
+    // useEffect(async()=>{
+    //   if(!players.length){
+    //     const {playerList} = await fetchDataFromAPI();
+    //     await setPlayers(playerList)
+    //   }
+    // },[players])
     
     return(
       <div className="gallery">
