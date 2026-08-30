@@ -1,3 +1,9 @@
+@import 'antd/dist/antd.css';
+
+/* =========================================
+   GLOBAL
+========================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -15,13 +21,39 @@ body {
   background: #160b12;
 }
 
+
+/* =========================================
+   EXISTING STYLES
+========================================= */
+
+.gallery {
+  margin: 0 auto;
+  max-width: 1080px;
+}
+
+.content {
+  position: relative;
+}
+
+.image {
+  width: 50%;
+}
+
+
+/* =========================================
+   MAIN SORRY PAGE
+========================================= */
+
 .sorry-page {
   position: relative;
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
+
   padding: 30px 20px;
 
   background:
@@ -43,16 +75,78 @@ body {
     );
 }
 
-/* -----------------------------
-   Floating Hearts
------------------------------ */
+
+/* =========================================
+   FLOATING ORBS
+   Kept from original design
+========================================= */
+
+.floating-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(16px);
+
+  opacity: 0.45;
+
+  animation: floatOrb 8s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.orb-one {
+  width: 280px;
+  height: 280px;
+
+  background: rgba(244, 114, 182, 0.22);
+
+  top: 10%;
+  left: 8%;
+}
+
+.orb-two {
+  width: 340px;
+  height: 340px;
+
+  background: rgba(251, 113, 133, 0.18);
+
+  right: 10%;
+  bottom: 8%;
+
+  animation-delay: 2s;
+}
+
+.orb-three {
+  width: 220px;
+  height: 220px;
+
+  background: rgba(244, 114, 182, 0.15);
+
+  left: 50%;
+  top: 18%;
+
+  transform: translateX(-50%);
+
+  animation-delay: 4s;
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
 
 .floating-heart {
   position: absolute;
+
   color: rgba(251, 113, 133, 0.3);
+
   font-size: 40px;
+
   pointer-events: none;
+
   animation: floatHeart 7s ease-in-out infinite;
+
   filter: blur(1px);
 }
 
@@ -90,31 +184,22 @@ body {
   animation-delay: 2s;
 }
 
-@keyframes floatHeart {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-8deg);
-    opacity: 0.25;
-  }
 
-  50% {
-    transform: translateY(-25px) rotate(8deg);
-    opacity: 0.55;
-  }
-}
-
-/* -----------------------------
-   Card
------------------------------ */
+/* =========================================
+   SORRY CARD
+========================================= */
 
 .sorry-card {
   position: relative;
+
   z-index: 2;
 
   width: min(100%, 680px);
+
   padding: 45px 42px;
 
   border: 1px solid rgba(251, 113, 133, 0.25);
+
   border-radius: 32px;
 
   text-align: center;
@@ -131,24 +216,14 @@ body {
   animation: cardEntrance 1s ease-out both;
 }
 
-@keyframes cardEntrance {
-  from {
-    opacity: 0;
-    transform: translateY(35px) scale(0.96);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* -----------------------------
-   Badge
------------------------------ */
+/* =========================================
+   BADGE
+========================================= */
 
 .sorry-badge {
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -157,21 +232,26 @@ body {
   border-radius: 999px;
 
   background: rgba(251, 113, 133, 0.1);
+
   border: 1px solid rgba(251, 113, 133, 0.25);
 
   color: #fda4af;
 
   font-size: 12px;
-  font-weight: 700;
+
   letter-spacing: 1px;
+
   text-transform: uppercase;
+
+  font-weight: 700;
 
   animation: fadeDown 1s ease 0.2s both;
 }
 
-/* -----------------------------
-   Heart
------------------------------ */
+
+/* =========================================
+   MAIN HEART
+========================================= */
 
 .heart-icon {
   margin-top: 25px;
@@ -182,8 +262,692 @@ body {
     heartbeat 1.8s ease-in-out infinite,
     fadeIn 1s ease 0.3s both;
 
-  filter: drop-shadow(0 8px 20px rgba(244, 63, 94, 0.35));
+  filter:
+    drop-shadow(
+      0 8px 20px rgba(244, 63, 94, 0.35)
+    );
 }
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.sorry-title {
+  margin: 18px 0 10px;
+
+  color: #fff1f2;
+
+  font-size: clamp(2.7rem, 7vw, 5rem);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+
+  animation: fadeIn 1s ease 0.4s both;
+}
+
+.sorry-title span {
+  display: block;
+
+  margin-top: 4px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fda4af,
+      #fb7185,
+      #f9a8d4
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 20px 0;
+
+  color: #fb7185;
+
+  animation: fadeIn 1s ease 0.5s both;
+}
+
+.divider span:nth-child(1) {
+  animation: tinyBounce 1.5s infinite;
+}
+
+.divider span:nth-child(2) {
+  animation:
+    tinyBounce 1.5s infinite 0.2s;
+}
+
+.divider span:nth-child(3) {
+  animation:
+    tinyBounce 1.5s infinite 0.4s;
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.sorry-message {
+  max-width: 550px;
+
+  margin: 0 auto 17px;
+
+  color: #f3dce3;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  animation:
+    fadeIn 1s ease 0.6s both;
+}
+
+.sorry-message.highlight {
+  margin-top: 25px;
+
+  padding: 17px 20px;
+
+  border-radius: 18px;
+
+  background: rgba(251, 113, 133, 0.08);
+
+  border: 1px solid rgba(251, 113, 133, 0.12);
+
+  color: #fda4af;
+}
+
+
+/* =========================================
+   LOVE LETTER
+========================================= */
+
+.love-letter {
+  margin: 30px auto;
+
+  padding: 30px 25px;
+
+  max-width: 590px;
+
+  background:
+    linear-gradient(
+      rgba(255, 248, 250, 0.98),
+      rgba(255, 243, 247, 0.98)
+    );
+
+  border-radius: 5px;
+
+  color: #32121d;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+
+  transform: rotate(-0.5deg);
+
+  animation:
+    letterAppear 0.8s ease both;
+}
+
+
+/* =========================================
+   LOVE LETTER HEADING
+========================================= */
+
+.letter-heading {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 25px;
+}
+
+.letter-heading span {
+  color: #9f1239;
+}
+
+
+/* =========================================
+   LOVE LETTER COLUMNS
+========================================= */
+
+.letter-columns {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.letter-columns p {
+  width: 50%;
+
+  font-size: 0.72rem;
+
+  line-height: 1.6;
+
+  font-weight: 700;
+
+  margin: 0;
+}
+
+.letter-columns p:last-child {
+  text-align: right;
+}
+
+
+/* =========================================
+   LOVE LETTER BODY
+========================================= */
+
+.letter-body {
+  font-size: 0.78rem;
+
+  line-height: 1.55;
+
+  font-weight: 600;
+
+  margin: 12px 0;
+}
+
+.letter-ending {
+  margin-top: 18px;
+
+  font-size: 1.3rem;
+
+  font-weight: 900;
+
+  color: #9f1239;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.sorry-button,
+.continue-button {
+  border: none;
+
+  border-radius: 999px;
+
+  padding: 14px 26px;
+
+  font-family: inherit;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+  color: #4c0519;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fda4af,
+      #fb7185,
+      #f9a8d4
+    );
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(251, 113, 133, 0.3);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  animation:
+    fadeIn 1s ease 0.8s both;
+}
+
+.sorry-button:hover,
+.continue-button:hover {
+  transform:
+    translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 15px 40px rgba(251, 113, 133, 0.45);
+}
+
+.sorry-button:active,
+.continue-button:active {
+  transform: scale(0.97);
+}
+
+.continue-button {
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   INTERACTIVE SECTION
+========================================= */
+
+.interactive-section {
+  margin-top: 35px;
+
+  animation:
+    fadeIn 0.7s ease both;
+}
+
+.interactive-section h2 {
+  color: #ffe4e6;
+
+  font-size: 1.45rem;
+
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  color: #c9aab5;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 22px;
+}
+
+
+/* =========================================
+   PROMISE GRID
+========================================= */
+
+.promise-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 12px;
+
+  max-width: 520px;
+
+  margin: auto;
+}
+
+
+/* =========================================
+   PROMISE CARD
+========================================= */
+
+.promise-card {
+  min-height: 150px;
+
+  padding: 20px 15px;
+
+  border-radius: 20px;
+
+  border:
+    1px solid rgba(
+      251,
+      113,
+      133,
+      0.15
+    );
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #fff1f2;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border 0.3s ease;
+
+  font-family: inherit;
+}
+
+.promise-card:hover {
+  transform: translateY(-4px);
+
+  background:
+    rgba(251, 113, 133, 0.08);
+}
+
+.promise-card.active {
+  background:
+    rgba(251, 113, 133, 0.12);
+
+  border-color:
+    rgba(251, 113, 133, 0.35);
+
+  transform: scale(1.02);
+}
+
+.promise-icon {
+  font-size: 30px;
+
+  margin-bottom: 8px;
+}
+
+.promise-card h3 {
+  margin: 5px 0;
+
+  font-size: 1rem;
+}
+
+.promise-card p {
+  margin: 10px 0 0;
+
+  color: #e8cdd6;
+
+  font-size: 0.83rem;
+
+  line-height: 1.5;
+}
+
+.tap-text {
+  display: block;
+
+  margin-top: 8px;
+
+  color: #fb7185;
+
+  font-size: 0.7rem;
+}
+
+
+/* =========================================
+   QUESTION BOX
+========================================= */
+
+.question-box {
+  margin-top: 35px;
+
+  padding: 30px 22px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(251, 113, 133, 0.08),
+      rgba(244, 114, 182, 0.04)
+    );
+
+  border:
+    1px solid rgba(
+      251,
+      113,
+      133,
+      0.15
+    );
+}
+
+.question-heart {
+  font-size: 40px;
+
+  animation:
+    heartbeat 1.8s infinite;
+}
+
+.question-box h2 {
+  margin: 10px 0;
+
+  color: #ffe4e6;
+}
+
+.question-box p {
+  color: #d8bdc6;
+
+  line-height: 1.8;
+
+  font-size: 0.95rem;
+}
+
+.big-line {
+  margin-top: 20px;
+
+  color: #fda4af !important;
+
+  font-size: 1.4rem !important;
+}
+
+.big-line strong {
+  color: #fff1f2;
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.final-message-box {
+  margin-top: 35px;
+
+  padding: 35px 25px;
+
+  border-radius: 27px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(251, 113, 133, 0.12),
+      transparent 50%
+    ),
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid rgba(
+      251,
+      113,
+      133,
+      0.2
+    );
+
+  animation:
+    finalReveal 1s ease both;
+}
+
+.final-heart {
+  font-size: 55px;
+
+  margin-bottom: 10px;
+
+  animation:
+    heartbeat 1.8s infinite;
+}
+
+.final-message-box h2 {
+  color: #ffe4e6;
+
+  font-size: 1.5rem;
+
+  margin-bottom: 20px;
+}
+
+.final-message-box p {
+  color: #d9c0c8;
+
+  line-height: 1.8;
+
+  font-size: 0.95rem;
+}
+
+.final-highlight {
+  margin: 25px 0;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(251, 113, 133, 0.07);
+
+  color: #fda4af;
+
+  font-size: 1.15rem;
+
+  line-height: 1.8;
+
+  font-weight: 600;
+}
+
+.final-highlight span {
+  color: #fff1f2;
+
+  font-size: 1.35rem;
+
+  font-weight: 800;
+}
+
+.signature {
+  margin-top: 25px;
+
+  color: #b993a0;
+
+  line-height: 1.7;
+}
+
+.signature strong {
+  color: #fb7185;
+
+  font-size: 1.1rem;
+}
+
+.forever {
+  margin-top: 30px;
+
+  color: #fb7185;
+
+  font-size: 1rem;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   BOTTOM TEXT
+========================================= */
+
+.bottom-text {
+  margin-top: 30px;
+
+  color: #a98794;
+
+  font-size: 0.85rem;
+
+  line-height: 1.7;
+
+  animation:
+    fadeIn 1s ease 1s both;
+}
+
+.bottom-text strong {
+  color: #d9a7b7;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(-18px)
+      scale(0.8);
+  }
+
+  60% {
+    opacity: 1;
+
+    transform:
+      translateY(6px)
+      scale(1.05);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
 
 @keyframes heartbeat {
   0%,
@@ -208,68 +972,6 @@ body {
   }
 }
 
-/* -----------------------------
-   Title
------------------------------ */
-
-.sorry-title {
-  margin: 18px 0 10px;
-
-  color: #fff1f2;
-
-  font-size: clamp(2.7rem, 7vw, 5rem);
-  line-height: 1.05;
-
-  font-weight: 800;
-  letter-spacing: -2px;
-
-  animation: fadeIn 1s ease 0.4s both;
-}
-
-.sorry-title span {
-  display: block;
-
-  margin-top: 4px;
-
-  background: linear-gradient(
-    135deg,
-    #fda4af,
-    #fb7185,
-    #f9a8d4
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* -----------------------------
-   Divider
------------------------------ */
-
-.divider {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-
-  margin: 20px 0;
-
-  color: #fb7185;
-
-  animation: fadeIn 1s ease 0.5s both;
-}
-
-.divider span:nth-child(1) {
-  animation: tinyBounce 1.5s infinite;
-}
-
-.divider span:nth-child(2) {
-  animation: tinyBounce 1.5s infinite 0.2s;
-}
-
-.divider span:nth-child(3) {
-  animation: tinyBounce 1.5s infinite 0.4s;
-}
 
 @keyframes tinyBounce {
   0%,
@@ -282,219 +984,94 @@ body {
   }
 }
 
-/* -----------------------------
-   Message
------------------------------ */
 
-.sorry-message {
-  max-width: 550px;
+@keyframes floatHeart {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(-8deg);
 
-  margin: 0 auto 17px;
+    opacity: 0.25;
+  }
 
-  color: #f3dce3;
+  50% {
+    transform:
+      translateY(-25px)
+      rotate(8deg);
 
-  font-size: 1.05rem;
-  line-height: 1.8;
-
-  animation: fadeIn 1s ease 0.6s both;
+    opacity: 0.55;
+  }
 }
 
-.sorry-message.highlight {
-  margin-top: 25px;
 
-  padding: 17px 20px;
+@keyframes floatOrb {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      translateX(0);
+  }
 
-  border-radius: 18px;
-
-  background: rgba(251, 113, 133, 0.08);
-  border: 1px solid rgba(251, 113, 133, 0.12);
-
-  color: #fda4af;
+  50% {
+    transform:
+      translateY(-18px)
+      translateX(12px);
+  }
 }
 
-/* -----------------------------
-   Button
------------------------------ */
 
-.sorry-button {
-  margin-top: 10px;
-
-  border: none;
-  border-radius: 999px;
-
-  padding: 15px 28px;
-
-  color: #4c0519;
-
-  font-size: 1rem;
-  font-weight: 700;
-
-  background: linear-gradient(
-    135deg,
-    #fda4af,
-    #fb7185,
-    #f9a8d4
-  );
-
-  cursor: pointer;
-
-  box-shadow:
-    0 10px 30px rgba(251, 113, 133, 0.3);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-
-  animation: fadeIn 1s ease 0.8s both;
-}
-
-.sorry-button:hover {
-  transform: translateY(-3px) scale(1.03);
-
-  box-shadow:
-    0 15px 40px rgba(251, 113, 133, 0.45);
-}
-
-.sorry-button:active {
-  transform: scale(0.97);
-}
-
-/* -----------------------------
-   Hidden Message
------------------------------ */
-
-.hidden-message {
-  margin-top: 28px;
-
-  padding: 28px 25px;
-
-  border-radius: 22px;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  border: 1px solid rgba(251, 113, 133, 0.16);
-
-  animation: messageReveal 0.6s ease both;
-}
-
-@keyframes messageReveal {
+@keyframes letterAppear {
   from {
     opacity: 0;
-    transform: translateY(15px);
+
+    transform:
+      translateY(25px)
+      rotate(-2deg);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0)
+      rotate(-0.5deg);
   }
 }
 
-.message-heart {
-  font-size: 35px;
 
-  margin-bottom: 12px;
-
-  animation: heartbeat 1.8s infinite;
-}
-
-.hidden-message p {
-  color: #f4dfe6;
-
-  font-size: 1rem;
-  line-height: 1.8;
-
-  margin: 0 0 18px;
-}
-
-.final-message {
-  color: #fda4af !important;
-  font-size: 1.05rem !important;
-}
-
-.final-message strong {
-  display: inline-block;
-
-  margin-top: 8px;
-
-  color: #fff1f2;
-
-  font-size: 1.25rem;
-}
-
-.signature {
-  margin-top: 25px;
-
-  color: #cdaab7;
-
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.signature span {
-  color: #fb7185;
-
-  font-weight: 700;
-  font-size: 1.1rem;
-}
-
-/* -----------------------------
-   Bottom Text
------------------------------ */
-
-.bottom-text {
-  margin-top: 30px;
-
-  color: #a98794;
-
-  font-size: 0.85rem;
-  line-height: 1.7;
-
-  animation: fadeIn 1s ease 1s both;
-}
-
-.bottom-text strong {
-  color: #d9a7b7;
-}
-
-/* -----------------------------
-   Animations
------------------------------ */
-
-@keyframes fadeIn {
+@keyframes finalReveal {
   from {
     opacity: 0;
-    transform: translateY(15px);
+
+    transform:
+      scale(0.92)
+      translateY(20px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      scale(1)
+      translateY(0);
   }
 }
 
-@keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* -----------------------------
-   Mobile
------------------------------ */
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
+
   .sorry-page {
     padding: 20px 14px;
   }
 
   .sorry-card {
-    padding: 35px 22px;
+    padding: 32px 18px;
+
     border-radius: 26px;
   }
 
@@ -504,10 +1081,84 @@ body {
 
   .sorry-message {
     font-size: 0.98rem;
+
     line-height: 1.7;
   }
 
   .floating-heart {
     opacity: 0.18;
+  }
+
+  .love-letter {
+    padding: 25px 18px;
+  }
+
+  .letter-columns {
+    gap: 10px;
+  }
+
+  .letter-columns p {
+    font-size: 0.62rem;
+  }
+
+  .letter-body {
+    font-size: 0.68rem;
+  }
+
+  .promise-grid {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .promise-card {
+    min-height: 140px;
+
+    padding: 16px 10px;
+  }
+
+  .promise-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .promise-card p {
+    font-size: 0.76rem;
+  }
+
+  .question-box {
+    padding: 25px 18px;
+  }
+
+  .final-message-box {
+    padding: 30px 18px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+  .sorry-card {
+    padding: 28px 14px;
+  }
+
+  .sorry-title {
+    font-size: 2.6rem;
+  }
+
+  .love-letter {
+    padding: 22px 14px;
+  }
+
+  .promise-card {
+    min-height: 135px;
+  }
+
+  .promise-icon {
+    font-size: 25px;
   }
 }
