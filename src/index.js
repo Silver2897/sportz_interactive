@@ -1,4 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SorryPage from './app';
-ReactDOM.render(<SorryPage />, document.getElementById('root'));
+import BridesmaidCardGenerator from './template_bridesmaid';
+
+ReactDOM.render(<BridesmaidCardGenerator />, document.getElementById('root'));
